@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+struct node
+{
+    int info;
+    struct node *link;
+};
+
+struct node *start = NULL;
+
+void insertion()
+{
+  
+    struct node *emp = (struct node*) malloc(sizeof(struct node));
+    scanf("%d",&emp->info);
+    emp->link = start;
+    start = emp;
+    
+}
+
+void printing()
+{
+    struct node *s = start;
+    while(s!=NULL){
+    
+    printf("%d ",s->info);
+    
+    s=s->link;  
+    
+     
+}
+}
+int main(){
+    int t;
+    scanf("%d",&t);
+    for (int i = 0; i < t; i++)
+    {
+     int n;
+    scanf("%d",&n);     
+    for(int i=0; i<n; i++){
+    insertion();}
+    printing();   
+    }
+    
+    
+    return 0;
+}
